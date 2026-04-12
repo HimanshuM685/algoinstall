@@ -9,16 +9,18 @@ and verifies everything at the end.
 ## Quick Start
 
 ```bash
-curl -sSL https://algoinstall.dev | bash
+curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main
 ```
 
 Pass options through `curl | bash` with `-s --`:
 
 ```bash
-curl -sSL https://algoinstall.dev | bash -s -- --dry-run
-curl -sSL https://algoinstall.dev | bash -s -- --with-docker
-curl -sSL https://algoinstall.dev | bash -s -- --skip-docker
+curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --dry-run
+curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --with-docker
+curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --skip-docker
 ```
+
+Use `raw.githubusercontent.com` for installer links. Avoid `githubraw.com` URLs.
 
 For local development:
 
