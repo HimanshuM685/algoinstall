@@ -4,6 +4,36 @@ pipx_exists() {
   command_exists pipx || [[ -x "$HOME/.local/bin/pipx" ]]
 }
 
+install_pipx_with_pip() {
+  if ! run_cmd "$PYTHON_BIN" -m pip install --user pipx; then
+    return 1
+  fi
+
+  run_cmd "$PYTHON_BIN" -m pipx ensurepath
+  return 0
+}
+
+install_pipx_with_os_packages() {
+  [[ "$PLATFORM" == "linux" ]] || return 1
+
+  [[ -n "${LINUX_PACKAGE_MANAGER:-}" ]] || LINUX_PACKAGE_MANAGER="$(detect_linux_package_manager)"
+  [[ "$LINUX_PACKAGE_MANAGER" != "unknown" ]] || return 1
+
+  if [[ "$LINUX_PACKAGE_MANAGER" == "apt" ]]; then
+    info "Falling back to apt for pipx (PEP 668-safe)"
+    install_packages_os pipx python3-venv
+  else
+    info "Falling back to $LINUX_PACKAGE_MANAGER for pipx"
+    install_packages_os pipx
+  fi
+
+  if command_exists pipx; then
+    run_cmd pipx ensurepath || true
+  fi
+
+  pipx_exists
+}
+
 ensure_pipx() {
   step "Checking pipx"
 
@@ -16,7 +46,11 @@ ensure_pipx() {
   if is_dry_run; then
     warn "pipx is missing"
     run_cmd "$PYTHON_BIN" -m pip install --user pipx
-    run_cmd "$PYTHON_BIN" -m pipx ensurepath
+    if [[ "$PLATFORM" == "linux" ]]; then
+      run_cmd sudo apt-get update
+      run_cmd sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y pipx python3-venv
+      run_cmd pipx ensurepath
+    fi
     ok "Dry-run: pipx installation would be attempted"
     return
   fi
@@ -25,15 +59,12 @@ ensure_pipx() {
 
   warn "pipx is missing"
 
-  if [[ "$PLATFORM" == "linux" || "$PLATFORM" == "mac" ]]; then
-    run_cmd "$PYTHON_BIN" -m pip install --user pipx
-  elif [[ "$PLATFORM" == "windows" ]]; then
-    run_cmd "$PYTHON_BIN" -m pip install --user pipx
-  else
-    fail "Unsupported platform for pipx installation: $PLATFORM"
+  if ! install_pipx_with_pip; then
+    if ! install_pipx_with_os_packages; then
+      fail "pipx installation failed. On Debian/Ubuntu, install with: sudo apt update && sudo apt install -y pipx python3-venv"
+    fi
   fi
 
-  run_cmd "$PYTHON_BIN" -m pipx ensurepath
   ensure_path_contains "$HOME/.local/bin"
 
   pipx_exists || fail "pipx installation failed"
