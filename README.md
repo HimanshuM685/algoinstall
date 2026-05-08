@@ -79,6 +79,63 @@ pipx upgrade algokit
 
 Restart the terminal after installation if PATH changed.
 
+## Platform Guide
+
+### Windows
+
+If you are on Windows, use WSL for the smoothest experience.
+
+```bash
+wsl --install
+```
+
+Then run AlgoInstall from inside your WSL Linux shell.
+
+### macOS
+
+If you install AlgoKit with Homebrew, it will install the latest Python 3 release
+as a dependency. If you already have Python 3.10+ installed, you may prefer `pipx`
+so you can control the Python version used.
+
+Ensure these prerequisites are installed:
+
+- Homebrew
+- Git
+- Docker, or `brew install --cask docker`
+
+Tip: Docker requires macOS 11+.
+
+Install with Homebrew:
+
+```bash
+brew install algorandfoundation/tap/algokit
+```
+
+Restart the terminal so `algokit` is available on your `PATH`.
+
+### Linux / OS Agnostic
+
+Ensure these prerequisites are installed:
+
+- Python 3.12+
+- pipx
+- Git
+- Docker
+
+Install AlgoKit with `pipx`:
+
+```bash
+pipx install algokit
+```
+
+If you used AlgoKit before, update it with:
+
+```bash
+pipx upgrade algokit
+```
+
+Restart the terminal after installation.
+
 ## Verify The Installation
 
 ```bash

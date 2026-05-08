@@ -82,6 +82,22 @@ install_packages_os() {
   esac
 }
 
+ensure_deadsnakes() {
+  local lsb_installed=0
+
+  if ! command_exists add-apt-repository; then
+    info "Installing software-properties-common for add-apt-repository"
+    install_packages_os software-properties-common
+  fi
+
+  run_with_sudo add-apt-repository -y ppa:deadsnakes/ppa
+
+  if [[ "$LINUX_UPDATED" -eq 0 ]]; then
+    run_with_sudo apt-get update
+    LINUX_UPDATED=1
+  fi
+}
+
 install_python_os() {
   [[ -n "$LINUX_PACKAGE_MANAGER" ]] || LINUX_PACKAGE_MANAGER="$(detect_linux_package_manager)"
   [[ "$LINUX_PACKAGE_MANAGER" != "unknown" ]] || fail "Cannot install Python automatically on this Linux distro"
@@ -90,10 +106,30 @@ install_python_os() {
     apt)
       info "Installing Python via apt"
       install_packages_os python3 python3-pip python3-venv
+
+      local pkg_version python_version
+      pkg_version="$(python3 --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+' || true)"
+      python_version="$(python_version_from_bin python3 2>/dev/null || true)"
+      local detected_ver="${python_version:-$pkg_version}"
+
+      if [[ -n "$detected_ver" ]] && version_ge "$detected_ver" "$MIN_PYTHON_VERSION"; then
+        return
+      fi
+
+      warn "Distro Python ($detected_ver) is below $MIN_PYTHON_VERSION — switching to deadsnakes PPA"
+      ensure_deadsnakes
+      install_packages_os python3.12 python3.12-venv python3.12-distutils || true
+      install_packages_os python3.12 python3.12-venv || true
+
+      if is_dry_run; then
+        return
+      fi
+
+      run_with_sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 || true
       ;;
     dnf|yum)
       info "Installing Python via $LINUX_PACKAGE_MANAGER"
-      install_packages_os python3 python3-pip
+      install_packages_os python3.12 python3.12-pip || install_packages_os python3 python3-pip
       ;;
     pacman)
       info "Installing Python via pacman"
