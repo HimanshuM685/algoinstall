@@ -122,6 +122,23 @@ Ensure these prerequisites are installed:
 - Git
 - Docker
 
+#### Arch Linux Containers (LXC/LXD)
+
+If running inside an Arch Linux container on a host kernel older than Linux 5.13,
+pacman may fail with Landlock sandboxing errors:
+
+```text
+error: restricting filesystem access failed because Landlock is not supported by the kernel!
+```
+
+Before running the installer, disable Landlock sandboxing in pacman:
+
+```bash
+echo 'DisableSandbox = yes' >> /etc/pacman.conf
+```
+
+Re-enable it after installation if the container moves to a newer kernel.
+
 Install AlgoKit with `pipx`:
 
 ```bash
