@@ -128,10 +128,6 @@ install_python_os() {
       if is_dry_run; then
         return
       fi
-
-      if ! run_with_sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1; then
-        warn "update-alternatives failed — python3 will remain at $detected_ver"
-      fi
       ;;
     dnf|yum)
       info "Installing Python via $LINUX_PACKAGE_MANAGER"

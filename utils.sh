@@ -37,7 +37,7 @@ run_cmd() {
     return 0
   fi
 
-  "$@"
+  "$@" </dev/null
 }
 
 run_with_sudo() {
