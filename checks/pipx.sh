@@ -62,7 +62,7 @@ install_pipx_with_pip() {
     return 1
   fi
 
-  if ! run_cmd "$PYTHON_BIN" -m pipx ensurepath; then
+  if ! run_cmd "$PYTHON_BIN" -m pipx ensurepath >/dev/null 2>&1; then
     return 1
   fi
 
@@ -84,7 +84,7 @@ install_pipx_with_os_packages() {
   fi
 
   if command_exists pipx; then
-    run_cmd pipx ensurepath || true
+    run_cmd pipx ensurepath >/dev/null 2>&1 || true
   fi
 
   if is_dry_run; then
