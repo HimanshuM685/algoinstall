@@ -6,7 +6,26 @@ AlgoInstall is a cross-platform installer that removes setup friction for AlgoKi
 It detects the OS, installs only missing dependencies, installs AlgoKit with `pipx`,
 and verifies everything at the end.
 
+## Prerequisites
+
+AlgoInstall installs the core prerequisites for you in one go:
+
+- Python 3.12 or higher
+- pipx
+- Git
+- Docker
+
+VS Code is recommended for smart contract development, but it is not required to
+run the installer.
+
+## Recommended IDE Extensions
+
+For the best Algorand smart contract experience in VS Code, install the Algorand
+TypeScript and Python extensions.
+
 ## Quick Start
+
+Install everything in one go:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main
@@ -43,6 +62,34 @@ bash install.sh
 3. Install only what is missing.
 4. Install or upgrade AlgoKit.
 5. Verify with `algokit --version`.
+
+## Install AlgoKit
+
+If you want to install AlgoKit manually after prerequisites are present:
+
+```bash
+pipx install algokit
+```
+
+If AlgoKit is already installed:
+
+```bash
+pipx upgrade algokit
+```
+
+Restart the terminal after installation if PATH changed.
+
+## Verify The Installation
+
+```bash
+algokit --version
+```
+
+Expected output:
+
+```text
+algokit, version 2.6.0
+```
 
 ## Project Structure
 

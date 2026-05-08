@@ -4,12 +4,68 @@ pipx_exists() {
   command_exists pipx || [[ -x "$HOME/.local/bin/pipx" ]]
 }
 
+python_pip_available() {
+  [[ -n "${PYTHON_BIN:-}" ]] || return 1
+  "$PYTHON_BIN" -m pip --version >/dev/null 2>&1
+}
+
+install_python_pip_with_os_packages() {
+  [[ "$PLATFORM" == "linux" ]] || return 1
+
+  [[ -n "${LINUX_PACKAGE_MANAGER:-}" ]] || LINUX_PACKAGE_MANAGER="$(detect_linux_package_manager)"
+  [[ "$LINUX_PACKAGE_MANAGER" != "unknown" ]] || return 1
+
+  case "$LINUX_PACKAGE_MANAGER" in
+    apt)
+      info "Installing python3-pip/python3-venv via apt"
+      install_packages_os python3-pip python3-venv
+      ;;
+    dnf|yum)
+      info "Installing python3-pip via $LINUX_PACKAGE_MANAGER"
+      install_packages_os python3-pip
+      ;;
+    pacman)
+      info "Installing python-pip via pacman"
+      install_packages_os python-pip
+      ;;
+    zypper)
+      info "Installing python3-pip via zypper"
+      install_packages_os python3-pip
+      ;;
+    apk)
+      info "Installing py3-pip via apk"
+      install_packages_os py3-pip
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+ensure_python_pip() {
+  python_pip_available && return 0
+
+  warn "pip is missing for $PYTHON_BIN"
+
+  if run_cmd "$PYTHON_BIN" -m ensurepip --upgrade && python_pip_available; then
+    return 0
+  fi
+
+  install_python_pip_with_os_packages || return 1
+  python_pip_available
+}
+
 install_pipx_with_pip() {
+  ensure_python_pip || return 1
+
   if ! run_cmd "$PYTHON_BIN" -m pip install --user pipx; then
     return 1
   fi
 
-  run_cmd "$PYTHON_BIN" -m pipx ensurepath
+  if ! run_cmd "$PYTHON_BIN" -m pipx ensurepath; then
+    return 1
+  fi
+
   return 0
 }
 
@@ -31,6 +87,10 @@ install_pipx_with_os_packages() {
     run_cmd pipx ensurepath || true
   fi
 
+  if is_dry_run; then
+    return 0
+  fi
+
   pipx_exists
 }
 
@@ -45,11 +105,11 @@ ensure_pipx() {
 
   if is_dry_run; then
     warn "pipx is missing"
+    run_cmd "$PYTHON_BIN" -m ensurepip --upgrade
     run_cmd "$PYTHON_BIN" -m pip install --user pipx
     if [[ "$PLATFORM" == "linux" ]]; then
-      run_cmd sudo apt-get update
-      run_cmd sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y pipx python3-venv
-      run_cmd pipx ensurepath
+      install_python_pip_with_os_packages || true
+      install_pipx_with_os_packages || true
     fi
     ok "Dry-run: pipx installation would be attempted"
     return
