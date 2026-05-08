@@ -83,19 +83,18 @@ install_packages_os() {
 }
 
 ensure_deadsnakes() {
-  local lsb_installed=0
-
   if ! command_exists add-apt-repository; then
     info "Installing software-properties-common for add-apt-repository"
     install_packages_os software-properties-common
   fi
 
-  run_with_sudo add-apt-repository -y ppa:deadsnakes/ppa
-
-  if [[ "$LINUX_UPDATED" -eq 0 ]]; then
-    run_with_sudo apt-get update
-    LINUX_UPDATED=1
+  if ! run_with_sudo add-apt-repository -y ppa:deadsnakes/ppa; then
+    warn "Failed to add deadsnakes PPA — falling back to distro Python"
+    return 1
   fi
+
+  run_with_sudo apt-get update
+  LINUX_UPDATED=1
 }
 
 install_python_os() {
@@ -117,15 +116,22 @@ install_python_os() {
       fi
 
       warn "Distro Python ($detected_ver) is below $MIN_PYTHON_VERSION — switching to deadsnakes PPA"
-      ensure_deadsnakes
-      install_packages_os python3.12 python3.12-venv python3.12-distutils || true
-      install_packages_os python3.12 python3.12-venv || true
+
+      if ensure_deadsnakes; then
+        if ! install_packages_os python3.12 python3.12-venv; then
+          fail "Failed to install python3.12 from deadsnakes PPA. Try manually: sudo apt-get install -y python3.12 python3.12-venv"
+        fi
+      else
+        fail "Cannot install Python $MIN_PYTHON_VERSION+. deadsnakes PPA is required on this Ubuntu/Debian version. Add it manually: sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3.12 python3.12-venv"
+      fi
 
       if is_dry_run; then
         return
       fi
 
-      run_with_sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 || true
+      if ! run_with_sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1; then
+        warn "update-alternatives failed — python3 will remain at $detected_ver"
+      fi
       ;;
     dnf|yum)
       info "Installing Python via $LINUX_PACKAGE_MANAGER"

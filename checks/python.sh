@@ -44,10 +44,15 @@ ensure_python() {
   if [[ -z "$PYTHON_BIN" ]]; then
     if command_exists python3; then
       version="$(python_version_from_bin python3)"
+      if [[ -n "$version" ]] && version_ge "$version" "$MIN_PYTHON_VERSION"; then
+        PYTHON_BIN="python3"
+        ok "Installed $PYTHON_BIN ($version)"
+        return
+      fi
       fail "Python installation succeeded, but version $version is below required $MIN_PYTHON_VERSION"
     fi
 
-    fail "Python installation did not provide Python $MIN_PYTHON_VERSION+"
+    fail "Python $MIN_PYTHON_VERSION+ installation did not produce a usable binary. Install it manually and re-run."
   fi
 
   version="$(python_version_from_bin "$PYTHON_BIN")"
