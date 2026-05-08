@@ -227,6 +227,11 @@ main() {
 
   source_modules
 
+  if [[ "$PLATFORM" == "windows" ]]; then
+    windows_main
+    exit 0
+  fi
+
   ensure_python
   ensure_pipx
   ensure_git
