@@ -83,6 +83,11 @@ install_packages_os() {
 }
 
 ensure_deadsnakes() {
+  if grep -qi "debian" /etc/os-release && ! grep -qi "ubuntu" /etc/os-release; then
+    warn "Debian natively provides Python < 3.12 and does not support the deadsnakes PPA."
+    return 1
+  fi
+
   if ! command_exists add-apt-repository; then
     info "Installing software-properties-common for add-apt-repository"
     install_packages_os software-properties-common
@@ -122,7 +127,11 @@ install_python_os() {
           fail "Failed to install python3.12 from deadsnakes PPA. Try manually: sudo apt-get install -y python3.12 python3.12-venv"
         fi
       else
-        fail "Cannot install Python $MIN_PYTHON_VERSION+. deadsnakes PPA is required on this Ubuntu/Debian version. Add it manually: sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3.12 python3.12-venv"
+        if grep -qi "debian" /etc/os-release && ! grep -qi "ubuntu" /etc/os-release; then
+          fail "Cannot install Python $MIN_PYTHON_VERSION+. Debian natively provides Python < 3.12. Please install Python $MIN_PYTHON_VERSION+ manually (e.g. via pyenv or source) and re-run this script."
+        else
+          fail "Cannot install Python $MIN_PYTHON_VERSION+. deadsnakes PPA is required on this Ubuntu version. Add it manually: sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3.12 python3.12-venv"
+        fi
       fi
 
       if is_dry_run; then
@@ -139,7 +148,7 @@ install_python_os() {
       ;;
     zypper)
       info "Installing Python via zypper"
-      install_packages_os python3 python3-pip
+      install_packages_os python312 python312-pip || install_packages_os python3.12 python3.12-pip || install_packages_os python3 python3-pip
       ;;
     apk)
       info "Installing Python via apk"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 find_python_bin() {
-  local candidates=(python3.14 python3.13 python3.12 python3 python)
+  local candidates=(python3.14 python3.13 python3.12 python3.11 python3.10 python3 python)
   local candidate version
 
   for candidate in "${candidates[@]}"; do
@@ -35,7 +35,7 @@ ensure_python() {
   install_python_os
 
   if is_dry_run; then
-    PYTHON_BIN="python3.12"
+    PYTHON_BIN="python3.10"
     ok "Dry-run: Python installation would be attempted"
     return
   fi
