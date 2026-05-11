@@ -36,7 +36,7 @@ download_file() {
 
 SCRIPT_DIR="$(resolve_script_dir)"
 BOOTSTRAP_DIR=""
-ALGOINSTALL_BASE_URL="${ALGOINSTALL_BASE_URL:-https://raw.githubusercontent.com/algoinstall/algoinstall/main}"
+ALGOINSTALL_BASE_URL="${ALGOINSTALL_BASE_URL:-https://algoinstall.007575.xyz}"
 
 bootstrap_modules_if_needed() {
   if [[ -n "$SCRIPT_DIR" && -f "$SCRIPT_DIR/utils.sh" ]]; then

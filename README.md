@@ -28,15 +28,15 @@ TypeScript and Python extensions.
 Install everything in one go:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main
+curl -fsSL https://algoinstall.007575.xyz | bash
 ```
 
 Pass options through `curl | bash` with `-s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --dry-run
-curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --with-docker
-curl -fsSL https://raw.githubusercontent.com/HimanshuM685/algoinstall/main/install.sh | bash -s -- --base-url https://raw.githubusercontent.com/HimanshuM685/algoinstall/main --skip-docker
+curl -fsSL https://algoinstall.007575.xyz | bash -s -- --dry-run
+curl -fsSL https://algoinstall.007575.xyz | bash -s -- --with-docker
+curl -fsSL https://algoinstall.007575.xyz | bash -s -- --skip-docker
 ```
 
 Use `raw.githubusercontent.com` for installer links. Avoid `githubraw.com` URLs.
