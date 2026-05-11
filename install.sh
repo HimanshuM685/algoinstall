@@ -78,6 +78,7 @@ DRY_RUN=0
 SKIP_DOCKER=0
 WITH_DOCKER=0
 MIN_PYTHON_VERSION="3.12"
+ORIGINAL_PATH="$PATH"
 
 PLATFORM=""
 PYTHON_BIN=""
@@ -193,6 +194,33 @@ verify_algokit() {
 
   [[ -n "$algokit_bin" ]] || fail "AlgoKit executable not found. Reopen your shell and run 'algokit --version'."
 
+  local algokit_in_orig_path=0
+  if ( export PATH="$ORIGINAL_PATH"; command -v algokit >/dev/null 2>&1 ); then
+    algokit_in_orig_path=1
+  fi
+
+  if [[ "$algokit_in_orig_path" -eq 0 ]] && ! is_dry_run; then
+    local symlinked=0
+    # Try to symlink into an existing writable directory in the user's ORIGINAL PATH
+    for dir in $(echo "$ORIGINAL_PATH" | tr ':' '\n'); do
+      if [[ -d "$dir" && -w "$dir" && "$dir" != "$HOME/.local/bin" ]]; then
+        if ln -sf "$algokit_bin" "$dir/algokit" >/dev/null 2>&1; then
+          symlinked=1
+          break
+        fi
+      fi
+    done
+    
+    # Fallback to /usr/local/bin if possible
+    if [[ "$symlinked" -eq 0 && -d "/usr/local/bin" ]]; then
+      if [[ -w "/usr/local/bin" ]]; then
+        ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1 || true
+      elif command_exists sudo; then
+        sudo ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1 || true
+      fi
+    fi
+  fi
+
   ALGOKIT_VERSION="$($algokit_bin --version 2>/dev/null)" || fail "AlgoKit verification failed."
   ok "$ALGOKIT_VERSION"
 }
@@ -205,8 +233,6 @@ print_done() {
 
   printf '\nDone! %s\n' "${ALGOKIT_VERSION:-AlgoKit installed}"
   printf 'Next steps:\n'
-  printf '  - Open a new shell if PATH was updated.\n'
-  printf '  - Run `algokit --version`.\n'
   printf '  - Run `algokit init` to create a new project.\n'
 }
 
