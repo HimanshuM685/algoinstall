@@ -61,7 +61,7 @@ install_packages_os() {
 
   case "$LINUX_PACKAGE_MANAGER" in
     apt)
-      run_with_sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y "$@"
+      run_with_sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "$@"
       ;;
     dnf)
       run_with_sudo dnf install -y "$@"
