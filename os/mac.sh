@@ -28,6 +28,36 @@ install_python_os() {
   install_packages_os python@3.12
 }
 
+install_python_with_uv_os() {
+  info "Installing Python with uv (fallback)"
+
+  if ! command_exists uv; then
+    if command_exists curl; then
+      run_cmd sh -c "curl -LsSf https://astral.sh/uv/install.sh | sh" || return 1
+    elif command_exists wget; then
+      run_cmd sh -c "wget -qO- https://astral.sh/uv/install.sh | sh" || return 1
+    else
+      warn "Neither curl nor wget is available to install uv"
+      return 1
+    fi
+  fi
+
+  ensure_path_contains "$HOME/.local/bin"
+  run_cmd uv python install 3.14 || return 1
+  ensure_path_contains "$HOME/.local/bin"
+
+  if command_exists python3.14; then
+    return 0
+  fi
+
+  local uv_python
+  uv_python="$(uv python find 3.14 2>/dev/null || true)"
+  if [[ -n "$uv_python" && -x "$uv_python" ]]; then
+    mkdir -p "$HOME/.local/bin"
+    run_cmd ln -sf "$uv_python" "$HOME/.local/bin/python3.14" || return 1
+  fi
+}
+
 install_python_from_source_os() {
   info "Installing Python $PYTHON_SOURCE_VERSION from source"
 

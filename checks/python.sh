@@ -33,7 +33,15 @@ ensure_python() {
 
   warn "Python $MIN_PYTHON_VERSION+ is missing"
   if ! install_python_os; then
-    warn "OS package installation for Python did not complete; trying source install fallback"
+    warn "OS package installation for Python did not complete; trying fallback installers"
+  fi
+
+  PYTHON_BIN="$(find_python_bin)"
+  if [[ -z "$PYTHON_BIN" ]] && declare -F install_python_with_uv_os >/dev/null 2>&1; then
+    warn "Trying uv fallback for Python 3.14"
+    if ! install_python_with_uv_os; then
+      warn "uv fallback did not complete"
+    fi
   fi
 
   PYTHON_BIN="$(find_python_bin)"

@@ -16,7 +16,8 @@ AlgoInstall installs the core prerequisites for you in one go:
 - Docker
 
 If your distro/package manager does not provide Python 3.12+, AlgoInstall falls back
-to building Python 3.14.5 from source using:
+to installing Python 3.14 via `uv`. If that fails, it falls back to building
+Python 3.14.5 from source using:
 `https://www.python.org/ftp/python/3.14.5/Python-3.14.5.tar.xz`
 
 VS Code is recommended for smart contract development, but it is not required to
