@@ -148,6 +148,12 @@ Install AlgoKit with `pipx`:
 
 ```bash
 pipx install algokit
+
+If `pipx` cannot resolve the package in your environment, install with `uv`:
+
+```bash
+uv tool install algokit --python 3.12
+```
 ```
 
 If you used AlgoKit before, update it with:

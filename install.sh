@@ -156,18 +156,39 @@ source_modules() {
 install_algokit() {
   step "Installing AlgoKit"
 
-  if pipx_package_installed "algokit"; then
-    info "AlgoKit already installed; upgrading"
-    pipx_exec upgrade algokit
-  else
-    pipx_exec install algokit
-  fi
-
   if is_dry_run; then
     ok "Dry-run: AlgoKit install/upgrade would be attempted"
     return
   fi
 
+  if pipx_package_installed "algokit"; then
+    info "AlgoKit already installed; upgrading"
+    if ! pipx_exec upgrade algokit; then
+      warn "pipx upgrade failed; trying uv tool upgrade"
+      if command_exists uv; then
+        run_cmd uv tool install --upgrade algokit --python "${PYTHON_BIN:-3.12}" || fail "AlgoKit upgrade failed via pipx and uv"
+      else
+        fail "AlgoKit upgrade failed via pipx and uv is not available"
+      fi
+    fi
+    ok "AlgoKit install step completed"
+    return
+  fi
+
+  if pipx_exec install --python "$PYTHON_BIN" algokit; then
+    ok "AlgoKit install step completed"
+    return
+  fi
+
+  warn "pipx install failed; trying uv tool install"
+  if ! command_exists uv; then
+    ensure_path_contains "$HOME/.local/bin"
+  fi
+  command_exists uv || fail "uv is required for fallback install, but it is not available"
+
+  run_cmd uv tool install algokit --python "${PYTHON_BIN:-3.12}" || fail "AlgoKit installation failed via both pipx and uv"
+
+  ensure_path_contains "$HOME/.local/bin"
   ok "AlgoKit install step completed"
 }
 
