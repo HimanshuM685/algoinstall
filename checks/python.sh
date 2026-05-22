@@ -32,7 +32,17 @@ ensure_python() {
   fi
 
   warn "Python $MIN_PYTHON_VERSION+ is missing"
-  install_python_os
+  if ! install_python_os; then
+    warn "OS package installation for Python did not complete; trying source install fallback"
+  fi
+
+  PYTHON_BIN="$(find_python_bin)"
+  if [[ -z "$PYTHON_BIN" ]] && declare -F install_python_from_source_os >/dev/null 2>&1; then
+    warn "Trying source build fallback for Python 3.14.5"
+    if ! install_python_from_source_os; then
+      warn "Source build fallback did not complete"
+    fi
+  fi
 
   if is_dry_run; then
     PYTHON_BIN="python3.10"
