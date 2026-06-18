@@ -79,6 +79,7 @@ SKIP_DOCKER=0
 WITH_DOCKER=0
 MIN_PYTHON_VERSION="3.12"
 ORIGINAL_PATH="$PATH"
+NEEDS_SHELL_RELOAD=0
 
 PLATFORM=""
 PYTHON_BIN=""
@@ -213,11 +214,18 @@ verify_algokit() {
     
     # Fallback to /usr/local/bin if possible
     if [[ "$symlinked" -eq 0 && -d "/usr/local/bin" ]]; then
-      if [[ -w "/usr/local/bin" ]]; then
-        ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1 || true
-      elif command_exists sudo; then
-        sudo ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1 || true
+      if [[ -w "/usr/local/bin" ]] && ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1; then
+        symlinked=1
+      elif command_exists sudo && sudo ln -sf "$algokit_bin" "/usr/local/bin/algokit" >/dev/null 2>&1; then
+        symlinked=1
       fi
+    fi
+
+    # If we could not symlink anywhere, persist ~/.local/bin in the shell RC
+    # so the user can activate it in this session without a full restart.
+    if [[ "$symlinked" -eq 0 ]]; then
+      update_shell_path_rc
+      NEEDS_SHELL_RELOAD=1
     fi
   fi
 
@@ -232,6 +240,13 @@ print_done() {
   fi
 
   printf '\nDone! %s\n' "${ALGOKIT_VERSION:-AlgoKit installed}"
+
+  if [[ "${NEEDS_SHELL_RELOAD:-0}" -eq 1 ]]; then
+    printf 'To use algokit in this terminal, run:\n'
+    printf '   export PATH="$HOME/.local/bin:$PATH"\n'
+    printf 'Or open a new terminal.\n'
+  fi
+
   printf 'Next steps:\n'
   printf '  - Run `algokit init` to create a new project.\n'
 }

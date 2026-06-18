@@ -128,6 +128,35 @@ ensure_path_contains() {
   export PATH="$path_segment:$PATH"
 }
 
+# Persist ~/.local/bin in the user's shell RC so a new shell picks it up.
+# Idempotent: skips files that already reference ~/.local/bin.
+update_shell_path_rc() {
+  local line='export PATH="$HOME/.local/bin:$PATH"'
+  local -a rc_files=()
+  local rc
+
+  case "${SHELL:-}" in
+    */zsh)  rc_files=("$HOME/.zshrc") ;;
+    */bash) rc_files=("$HOME/.bashrc" "$HOME/.bash_profile") ;;
+    *)      rc_files=("$HOME/.profile") ;;
+  esac
+
+  for rc in "${rc_files[@]}"; do
+    if [[ -f "$rc" ]] && grep -qF '.local/bin' "$rc" 2>/dev/null; then
+      continue
+    fi
+
+    if is_dry_run; then
+      printf '   [dry-run] append PATH update to %s\n' "$rc"
+      continue
+    fi
+
+    if printf '\n# Added by AlgoInstall\n%s\n' "$line" >> "$rc" 2>/dev/null; then
+      info "Added ~/.local/bin to PATH in $rc"
+    fi
+  done
+}
+
 pipx_exec() {
   local pipx_bin=""
 
