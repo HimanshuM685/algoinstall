@@ -176,6 +176,33 @@ Expected output:
 algokit, version 2.6.0
 ```
 
+## Testing
+
+The project includes a self-contained Bash test suite with no external dependencies.
+
+```bash
+bash tests/run_tests.sh
+```
+
+Run a single suite:
+
+```bash
+bash tests/run_tests.sh test_utils
+bash tests/run_tests.sh test_install
+```
+
+### Test Coverage
+
+| Suite | Covers | Tests |
+|---|---|---|
+| `test_syntax` | `bash -n` + shellcheck on all 9 scripts | 9 |
+| `test_utils` | `command_exists`, `is_dry_run`, logging, `run_cmd`, `run_with_sudo`, `version_ge`, `detect_platform`, `ensure_path_contains`, `pipx_package_installed` | 35 |
+| `test_install` | `parse_args`, `preparse_bootstrap_args`, `usage`, `print_done`, `resolve_script_dir`, `--dry-run` integration, `--help` | 16 |
+| `test_checks` | `find_python_bin`, `ensure_docker` (skip/found/missing), `ensure_git`, `pipx_exists`, `python_pip_available` | 9 |
+| `test_os_linux` | `detect_linux_package_manager`, `linux_pkg_update_once`, `install_packages_os` dispatch (apt/dnf/pacman/zypper/apk/unknown) | 9 |
+
+All tests run without `sudo` or network access. OS install functions are stubbed so tests are safe on any machine.
+
 ## Project Structure
 
 ```text
@@ -191,6 +218,14 @@ algoinstall/
 |  |- pipx.sh
 |  |- docker.sh
 |  `- git.sh
+|- tests/
+|  |- run_tests.sh
+|  |- test_runner.sh
+|  |- test_syntax.sh
+|  |- test_utils.sh
+|  |- test_install.sh
+|  |- test_checks.sh
+|  `- test_os_linux.sh
 `- README.md
 ```
 

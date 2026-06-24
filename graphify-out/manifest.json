@@ -1,0 +1,57 @@
+{
+  "checks/docker.sh": {
+    "mtime": 1779462375.4151201,
+    "ast_hash": "0908ccef2dcdd2ee39206ba6e98a46a5",
+    "semantic_hash": "0908ccef2dcdd2ee39206ba6e98a46a5"
+  },
+  "checks/git.sh": {
+    "mtime": 1779462375.4151201,
+    "ast_hash": "80e5a6d9f9ca5f381b27b9748afa805d",
+    "semantic_hash": "80e5a6d9f9ca5f381b27b9748afa805d"
+  },
+  "checks/pipx.sh": {
+    "mtime": 1779462375.4151201,
+    "ast_hash": "7c795b5ddc982c5bc6c96749072f7a0d",
+    "semantic_hash": "7c795b5ddc982c5bc6c96749072f7a0d"
+  },
+  "checks/python.sh": {
+    "mtime": 1779465249.6517406,
+    "ast_hash": "164d521e85688c4086714bddaa78709b",
+    "semantic_hash": "164d521e85688c4086714bddaa78709b"
+  },
+  "install.sh": {
+    "mtime": 1779465961.7116206,
+    "ast_hash": "eb6cd10446aedcf1b74ebbf82b7e935a",
+    "semantic_hash": "eb6cd10446aedcf1b74ebbf82b7e935a"
+  },
+  "os/linux.sh": {
+    "mtime": 1779465257.435925,
+    "ast_hash": "c4b8b578969e4d3d9ffe1a1abe3891ee",
+    "semantic_hash": "c4b8b578969e4d3d9ffe1a1abe3891ee"
+  },
+  "os/mac.sh": {
+    "mtime": 1779465265.5041158,
+    "ast_hash": "7368617cab609d461dfc822ce8e23446",
+    "semantic_hash": "7368617cab609d461dfc822ce8e23446"
+  },
+  "os/windows.sh": {
+    "mtime": 1779462375.4151201,
+    "ast_hash": "fcfbff0952ac3ccd79248080dada003a",
+    "semantic_hash": "fcfbff0952ac3ccd79248080dada003a"
+  },
+  "utils.sh": {
+    "mtime": 1779462375.4151201,
+    "ast_hash": "7831b7633fe8485559af005f9528c6fc",
+    "semantic_hash": "7831b7633fe8485559af005f9528c6fc"
+  },
+  "CLAUDE.md": {
+    "mtime": 1782321326.3646278,
+    "ast_hash": "8cbeacc9365fd6410ebfa58c4d5c544c",
+    "semantic_hash": "8cbeacc9365fd6410ebfa58c4d5c544c"
+  },
+  "README.md": {
+    "mtime": 1779465969.347784,
+    "ast_hash": "da08f54a9fbb0da1e0488b7369127c06",
+    "semantic_hash": "da08f54a9fbb0da1e0488b7369127c06"
+  }
+}
