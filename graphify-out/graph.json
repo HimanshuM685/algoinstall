@@ -1,0 +1,2834 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "prerequisite_checks_flow",
+        "label": "Prerequisite Dependency Checks",
+        "nodes": [
+          "readme_checks_python_sh",
+          "readme_checks_pipx_sh",
+          "readme_checks_docker_sh",
+          "readme_checks_git_sh"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+      },
+      {
+        "id": "os_module_dispatch",
+        "label": "OS-Specific Install Modules",
+        "nodes": [
+          "readme_os_linux_sh",
+          "readme_os_mac_sh",
+          "readme_os_windows_sh",
+          "readme_install_sh"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+      },
+      {
+        "id": "installation_flow_participants",
+        "label": "AlgoKit Installation Flow",
+        "nodes": [
+          "readme_platform_detection",
+          "readme_python",
+          "readme_pipx",
+          "readme_algokit"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "docker.sh",
+      "file_type": "code",
+      "source_file": "checks/docker.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "checks_docker",
+      "community": 8,
+      "norm_label": "docker.sh"
+    },
+    {
+      "label": "docker.sh script",
+      "file_type": "code",
+      "source_file": "checks/docker.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_checks_docker_sh__entry",
+      "community": 8,
+      "norm_label": "docker.sh script"
+    },
+    {
+      "label": "ensure_docker()",
+      "file_type": "code",
+      "source_file": "checks/docker.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_docker_ensure_docker",
+      "community": 8,
+      "norm_label": "ensure_docker()"
+    },
+    {
+      "label": "git.sh",
+      "file_type": "code",
+      "source_file": "checks/git.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "checks_git",
+      "community": 9,
+      "norm_label": "git.sh"
+    },
+    {
+      "label": "git.sh script",
+      "file_type": "code",
+      "source_file": "checks/git.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_checks_git_sh__entry",
+      "community": 9,
+      "norm_label": "git.sh script"
+    },
+    {
+      "label": "ensure_git()",
+      "file_type": "code",
+      "source_file": "checks/git.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_git_ensure_git",
+      "community": 9,
+      "norm_label": "ensure_git()"
+    },
+    {
+      "label": "pipx.sh",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx",
+      "community": 3,
+      "norm_label": "pipx.sh"
+    },
+    {
+      "label": "pipx.sh script",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_checks_pipx_sh__entry",
+      "community": 3,
+      "norm_label": "pipx.sh script"
+    },
+    {
+      "label": "pipx_exists()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_pipx_exists",
+      "community": 3,
+      "norm_label": "pipx_exists()"
+    },
+    {
+      "label": "python_pip_available()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L7",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_python_pip_available",
+      "community": 3,
+      "norm_label": "python_pip_available()"
+    },
+    {
+      "label": "install_python_pip_with_os_packages()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L12",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_install_python_pip_with_os_packages",
+      "community": 3,
+      "norm_label": "install_python_pip_with_os_packages()"
+    },
+    {
+      "label": "ensure_python_pip()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L45",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_ensure_python_pip",
+      "community": 3,
+      "norm_label": "ensure_python_pip()"
+    },
+    {
+      "label": "install_pipx_with_pip()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L58",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_install_pipx_with_pip",
+      "community": 3,
+      "norm_label": "install_pipx_with_pip()"
+    },
+    {
+      "label": "install_pipx_with_os_packages()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L72",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_install_pipx_with_os_packages",
+      "community": 3,
+      "norm_label": "install_pipx_with_os_packages()"
+    },
+    {
+      "label": "ensure_pipx()",
+      "file_type": "code",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L97",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_pipx_ensure_pipx",
+      "community": 3,
+      "norm_label": "ensure_pipx()"
+    },
+    {
+      "label": "python.sh",
+      "file_type": "code",
+      "source_file": "checks/python.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "checks_python",
+      "community": 7,
+      "norm_label": "python.sh"
+    },
+    {
+      "label": "python.sh script",
+      "file_type": "code",
+      "source_file": "checks/python.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_checks_python_sh__entry",
+      "community": 7,
+      "norm_label": "python.sh script"
+    },
+    {
+      "label": "find_python_bin()",
+      "file_type": "code",
+      "source_file": "checks/python.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_python_find_python_bin",
+      "community": 7,
+      "norm_label": "find_python_bin()"
+    },
+    {
+      "label": "ensure_python()",
+      "file_type": "code",
+      "source_file": "checks/python.sh",
+      "source_location": "L22",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "checks_python_ensure_python",
+      "community": 7,
+      "norm_label": "ensure_python()"
+    },
+    {
+      "label": "install.sh",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "install",
+      "community": 2,
+      "norm_label": "install.sh"
+    },
+    {
+      "label": "install.sh script",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_install_sh__entry",
+      "community": 2,
+      "norm_label": "install.sh script"
+    },
+    {
+      "label": "resolve_script_dir()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L4",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_resolve_script_dir",
+      "community": 2,
+      "norm_label": "resolve_script_dir()"
+    },
+    {
+      "label": "plain_fail()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L15",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_plain_fail",
+      "community": 2,
+      "norm_label": "plain_fail()"
+    },
+    {
+      "label": "download_file()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L20",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_download_file",
+      "community": 2,
+      "norm_label": "download_file()"
+    },
+    {
+      "label": "bootstrap_modules_if_needed()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L41",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_bootstrap_modules_if_needed",
+      "community": 2,
+      "norm_label": "bootstrap_modules_if_needed()"
+    },
+    {
+      "label": "cleanup_bootstrap_dir()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L70",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_cleanup_bootstrap_dir",
+      "community": 2,
+      "norm_label": "cleanup_bootstrap_dir()"
+    },
+    {
+      "label": "usage()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L88",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_usage",
+      "community": 2,
+      "norm_label": "usage()"
+    },
+    {
+      "label": "preparse_bootstrap_args()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L101",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_preparse_bootstrap_args",
+      "community": 2,
+      "norm_label": "preparse_bootstrap_args()"
+    },
+    {
+      "label": "parse_args()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L117",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_parse_args",
+      "community": 2,
+      "norm_label": "parse_args()"
+    },
+    {
+      "label": "source_modules()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L146",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_source_modules",
+      "community": 2,
+      "norm_label": "source_modules()"
+    },
+    {
+      "label": "install_algokit()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L157",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_install_algokit",
+      "community": 2,
+      "norm_label": "install_algokit()"
+    },
+    {
+      "label": "verify_algokit()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L175",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_verify_algokit",
+      "community": 2,
+      "norm_label": "verify_algokit()"
+    },
+    {
+      "label": "print_done()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L236",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_print_done",
+      "community": 2,
+      "norm_label": "print_done()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "install.sh",
+      "source_location": "L254",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "install_main",
+      "community": 2,
+      "norm_label": "main()"
+    },
+    {
+      "label": "linux.sh",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "os_linux",
+      "community": 4,
+      "norm_label": "linux.sh"
+    },
+    {
+      "label": "linux.sh script",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_os_linux_sh__entry",
+      "community": 4,
+      "norm_label": "linux.sh script"
+    },
+    {
+      "label": "detect_linux_package_manager()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L6",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_detect_linux_package_manager",
+      "community": 4,
+      "norm_label": "detect_linux_package_manager()"
+    },
+    {
+      "label": "linux_pkg_update_once()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L40",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_linux_pkg_update_once",
+      "community": 4,
+      "norm_label": "linux_pkg_update_once()"
+    },
+    {
+      "label": "install_packages_os()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L54",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_install_packages_os",
+      "community": 4,
+      "norm_label": "install_packages_os()"
+    },
+    {
+      "label": "ensure_deadsnakes()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L85",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_ensure_deadsnakes",
+      "community": 4,
+      "norm_label": "ensure_deadsnakes()"
+    },
+    {
+      "label": "install_python_os()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L105",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_install_python_os",
+      "community": 4,
+      "norm_label": "install_python_os()"
+    },
+    {
+      "label": "install_git_os()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L160",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_install_git_os",
+      "community": 4,
+      "norm_label": "install_git_os()"
+    },
+    {
+      "label": "install_docker_os()",
+      "file_type": "code",
+      "source_file": "os/linux.sh",
+      "source_location": "L165",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_linux_install_docker_os",
+      "community": 4,
+      "norm_label": "install_docker_os()"
+    },
+    {
+      "label": "mac.sh",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "os_mac",
+      "community": 5,
+      "norm_label": "mac.sh"
+    },
+    {
+      "label": "mac.sh script",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_os_mac_sh__entry",
+      "community": 5,
+      "norm_label": "mac.sh script"
+    },
+    {
+      "label": "ensure_homebrew()",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_mac_ensure_homebrew",
+      "community": 5,
+      "norm_label": "ensure_homebrew()"
+    },
+    {
+      "label": "install_packages_os()",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L18",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_mac_install_packages_os",
+      "community": 5,
+      "norm_label": "install_packages_os()"
+    },
+    {
+      "label": "install_python_os()",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L23",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_mac_install_python_os",
+      "community": 5,
+      "norm_label": "install_python_os()"
+    },
+    {
+      "label": "install_git_os()",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L28",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_mac_install_git_os",
+      "community": 5,
+      "norm_label": "install_git_os()"
+    },
+    {
+      "label": "install_docker_os()",
+      "file_type": "code",
+      "source_file": "os/mac.sh",
+      "source_location": "L33",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_mac_install_docker_os",
+      "community": 5,
+      "norm_label": "install_docker_os()"
+    },
+    {
+      "label": "windows.sh",
+      "file_type": "code",
+      "source_file": "os/windows.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "os_windows",
+      "community": 6,
+      "norm_label": "windows.sh"
+    },
+    {
+      "label": "windows.sh script",
+      "file_type": "code",
+      "source_file": "os/windows.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_os_windows_sh__entry",
+      "community": 6,
+      "norm_label": "windows.sh script"
+    },
+    {
+      "label": "winget_available()",
+      "file_type": "code",
+      "source_file": "os/windows.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_windows_winget_available",
+      "community": 6,
+      "norm_label": "winget_available()"
+    },
+    {
+      "label": "winget_install_id()",
+      "file_type": "code",
+      "source_file": "os/windows.sh",
+      "source_location": "L7",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_windows_winget_install_id",
+      "community": 6,
+      "norm_label": "winget_install_id()"
+    },
+    {
+      "label": "windows_main()",
+      "file_type": "code",
+      "source_file": "os/windows.sh",
+      "source_location": "L20",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "os_windows_windows_main",
+      "community": 6,
+      "norm_label": "windows_main()"
+    },
+    {
+      "label": "utils.sh",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "utils",
+      "community": 1,
+      "norm_label": "utils.sh"
+    },
+    {
+      "label": "utils.sh script",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "users_fusion_code_gitrepos_algoinstall_utils_sh__entry",
+      "community": 1,
+      "norm_label": "utils.sh script"
+    },
+    {
+      "label": "command_exists()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_command_exists",
+      "community": 1,
+      "norm_label": "command_exists()"
+    },
+    {
+      "label": "is_dry_run()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L7",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_is_dry_run",
+      "community": 1,
+      "norm_label": "is_dry_run()"
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L11",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_step",
+      "community": 1,
+      "norm_label": "step()"
+    },
+    {
+      "label": "info()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L15",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_info",
+      "community": 1,
+      "norm_label": "info()"
+    },
+    {
+      "label": "ok()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L19",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_ok",
+      "community": 1,
+      "norm_label": "ok()"
+    },
+    {
+      "label": "warn()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L23",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_warn",
+      "community": 1,
+      "norm_label": "warn()"
+    },
+    {
+      "label": "fail()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L27",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_fail",
+      "community": 1,
+      "norm_label": "fail()"
+    },
+    {
+      "label": "run_cmd()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L32",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_run_cmd",
+      "community": 1,
+      "norm_label": "run_cmd()"
+    },
+    {
+      "label": "run_with_sudo()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L43",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_run_with_sudo",
+      "community": 1,
+      "norm_label": "run_with_sudo()"
+    },
+    {
+      "label": "version_ge()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L61",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_version_ge",
+      "community": 1,
+      "norm_label": "version_ge()"
+    },
+    {
+      "label": "python_version_from_bin()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L95",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_python_version_from_bin",
+      "community": 1,
+      "norm_label": "python_version_from_bin()"
+    },
+    {
+      "label": "detect_platform()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L99",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_detect_platform",
+      "community": 1,
+      "norm_label": "detect_platform()"
+    },
+    {
+      "label": "ensure_path_contains()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L119",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_ensure_path_contains",
+      "community": 1,
+      "norm_label": "ensure_path_contains()"
+    },
+    {
+      "label": "update_shell_path_rc()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L133",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_update_shell_path_rc",
+      "community": 1,
+      "norm_label": "update_shell_path_rc()"
+    },
+    {
+      "label": "pipx_exec()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L160",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_pipx_exec",
+      "community": 1,
+      "norm_label": "pipx_exec()"
+    },
+    {
+      "label": "pipx_package_installed()",
+      "file_type": "code",
+      "source_file": "utils.sh",
+      "source_location": "L178",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "id": "utils_pipx_package_installed",
+      "community": 1,
+      "norm_label": "pipx_package_installed()"
+    },
+    {
+      "label": "AlgoInstall",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L1-L7",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_algoinstall",
+      "community": 0,
+      "norm_label": "algoinstall"
+    },
+    {
+      "label": "AlgoKit",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L64-L72",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_algokit",
+      "community": 0,
+      "norm_label": "algokit"
+    },
+    {
+      "label": "pipx",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L14-L71",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_pipx",
+      "community": 0,
+      "norm_label": "pipx"
+    },
+    {
+      "label": "Python 3.12+",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_python",
+      "community": 0,
+      "norm_label": "python 3.12+"
+    },
+    {
+      "label": "Git",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_git",
+      "community": 0,
+      "norm_label": "git"
+    },
+    {
+      "label": "Docker",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_docker",
+      "community": 0,
+      "norm_label": "docker"
+    },
+    {
+      "label": "install.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L172",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_install_sh",
+      "community": 0,
+      "norm_label": "install.sh"
+    },
+    {
+      "label": "utils.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_utils_sh",
+      "community": 0,
+      "norm_label": "utils.sh"
+    },
+    {
+      "label": "os/linux.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L175",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_os_linux_sh",
+      "community": 0,
+      "norm_label": "os/linux.sh"
+    },
+    {
+      "label": "os/mac.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L176",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_os_mac_sh",
+      "community": 0,
+      "norm_label": "os/mac.sh"
+    },
+    {
+      "label": "os/windows.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L177",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_os_windows_sh",
+      "community": 0,
+      "norm_label": "os/windows.sh"
+    },
+    {
+      "label": "checks/python.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L179",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_checks_python_sh",
+      "community": 0,
+      "norm_label": "checks/python.sh"
+    },
+    {
+      "label": "checks/pipx.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L180",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_checks_pipx_sh",
+      "community": 0,
+      "norm_label": "checks/pipx.sh"
+    },
+    {
+      "label": "checks/docker.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_checks_docker_sh",
+      "community": 0,
+      "norm_label": "checks/docker.sh"
+    },
+    {
+      "label": "checks/git.sh",
+      "file_type": "code",
+      "source_file": "README.md",
+      "source_location": "L182",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_checks_git_sh",
+      "community": 0,
+      "norm_label": "checks/git.sh"
+    },
+    {
+      "label": "Installation Flow",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L58-L64",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_installation_flow",
+      "community": 0,
+      "norm_label": "installation flow"
+    },
+    {
+      "label": "Platform Detection",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L60",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_platform_detection",
+      "community": 0,
+      "norm_label": "platform detection"
+    },
+    {
+      "label": "--dry-run option",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_dry_run",
+      "community": 0,
+      "norm_label": "--dry-run option"
+    },
+    {
+      "label": "Idempotent Single Command",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "L193-L196",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_idempotent_command",
+      "community": 0,
+      "norm_label": "idempotent single command"
+    },
+    {
+      "label": "Homebrew",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L96-L112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_homebrew",
+      "community": 0,
+      "norm_label": "homebrew"
+    },
+    {
+      "label": "WSL",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "L84-L92",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_wsl",
+      "community": 0,
+      "norm_label": "wsl"
+    },
+    {
+      "label": "Arch Landlock Sandbox Fix",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "L125-L140",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_landlock_fix",
+      "community": 0,
+      "norm_label": "arch landlock sandbox fix"
+    }
+  ],
+  "links": [
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/docker.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "checks_docker",
+      "target": "checks_docker_ensure_docker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/docker.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "checks_docker",
+      "target": "users_fusion_code_gitrepos_algoinstall_checks_docker_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/git.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "checks_git",
+      "target": "checks_git_ensure_git",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/git.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "checks_git",
+      "target": "users_fusion_code_gitrepos_algoinstall_checks_git_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_ensure_pipx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_ensure_python_pip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_install_pipx_with_os_packages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_install_pipx_with_pip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_install_python_pip_with_os_packages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_pipx_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "checks_pipx_python_pip_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "checks_pipx",
+      "target": "users_fusion_code_gitrepos_algoinstall_checks_pipx_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_pipx",
+      "target": "checks_pipx_pipx_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_install_pipx_with_os_packages",
+      "target": "checks_pipx_pipx_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_python_pip",
+      "target": "checks_pipx_python_pip_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_pipx",
+      "target": "checks_pipx_install_python_pip_with_os_packages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_python_pip",
+      "target": "checks_pipx_install_python_pip_with_os_packages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_install_pipx_with_pip",
+      "target": "checks_pipx_ensure_python_pip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L122",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_pipx",
+      "target": "checks_pipx_install_pipx_with_pip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/pipx.sh",
+      "source_location": "L112",
+      "weight": 1.0,
+      "context": "call",
+      "source": "checks_pipx_ensure_pipx",
+      "target": "checks_pipx_install_pipx_with_os_packages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/python.sh",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "checks_python",
+      "target": "checks_python_ensure_python",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/python.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "checks_python",
+      "target": "checks_python_find_python_bin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "checks/python.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "checks_python",
+      "target": "users_fusion_code_gitrepos_algoinstall_checks_python_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_bootstrap_modules_if_needed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_cleanup_bootstrap_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_download_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_install_algokit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L254",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_parse_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_plain_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_preparse_bootstrap_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L236",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_print_done",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_resolve_script_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_source_modules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_usage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "install",
+      "target": "install_verify_algokit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "install",
+      "target": "users_fusion_code_gitrepos_algoinstall_install_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L286",
+      "weight": 1.0,
+      "context": "call",
+      "source": "users_fusion_code_gitrepos_algoinstall_install_sh__entry",
+      "target": "install_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_bootstrap_modules_if_needed",
+      "target": "install_plain_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_download_file",
+      "target": "install_plain_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_preparse_bootstrap_args",
+      "target": "install_plain_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_bootstrap_modules_if_needed",
+      "target": "install_download_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L256",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_bootstrap_modules_if_needed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L135",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_parse_args",
+      "target": "install_usage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L255",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_preparse_bootstrap_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L260",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_parse_args",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L269",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_source_modules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L281",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_install_algokit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L282",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_verify_algokit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "install.sh",
+      "source_location": "L283",
+      "weight": 1.0,
+      "context": "call",
+      "source": "install_main",
+      "target": "install_print_done",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_detect_linux_package_manager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_ensure_deadsnakes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_install_docker_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_install_git_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_install_python_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "os_linux_linux_pkg_update_once",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "os_linux",
+      "target": "users_fusion_code_gitrepos_algoinstall_os_linux_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_install_packages_os",
+      "target": "os_linux_linux_pkg_update_once",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L93",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_ensure_deadsnakes",
+      "target": "os_linux_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_install_docker_os",
+      "target": "os_linux_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L162",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_install_git_os",
+      "target": "os_linux_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L112",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_install_python_os",
+      "target": "os_linux_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/linux.sh",
+      "source_location": "L125",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_linux_install_python_os",
+      "target": "os_linux_ensure_deadsnakes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "os_mac_ensure_homebrew",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "os_mac_install_docker_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "os_mac_install_git_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "os_mac_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "os_mac_install_python_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "os_mac",
+      "target": "users_fusion_code_gitrepos_algoinstall_os_mac_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_mac_install_packages_os",
+      "target": "os_mac_ensure_homebrew",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_mac_install_docker_os",
+      "target": "os_mac_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_mac_install_git_os",
+      "target": "os_mac_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/mac.sh",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_mac_install_python_os",
+      "target": "os_mac_install_packages_os",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "os_windows",
+      "target": "os_windows_windows_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "os_windows",
+      "target": "os_windows_winget_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "os_windows",
+      "target": "os_windows_winget_install_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "os_windows",
+      "target": "users_fusion_code_gitrepos_algoinstall_os_windows_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_windows_winget_install_id",
+      "target": "os_windows_winget_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "os/windows.sh",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "call",
+      "source": "os_windows_windows_main",
+      "target": "os_windows_winget_install_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "users_fusion_code_gitrepos_algoinstall_utils_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_command_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_detect_platform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_ensure_path_contains",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_pipx_exec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_pipx_package_installed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_python_version_from_bin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_run_cmd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_run_with_sudo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_update_shell_path_rc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_version_ge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "utils",
+      "target": "utils_warn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L163",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_exec",
+      "target": "utils_command_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L186",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_package_installed",
+      "target": "utils_command_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_run_with_sudo",
+      "target": "utils_command_exists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L168",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_exec",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L181",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_package_installed",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_run_cmd",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_run_with_sudo",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L149",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_update_shell_path_rc",
+      "target": "utils_is_dry_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L155",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_update_shell_path_rc",
+      "target": "utils_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_exec",
+      "target": "utils_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_run_with_sudo",
+      "target": "utils_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L169",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_exec",
+      "target": "utils_run_cmd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_run_with_sudo",
+      "target": "utils_run_cmd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "utils.sh",
+      "source_location": "L167",
+      "weight": 1.0,
+      "context": "call",
+      "source": "utils_pipx_exec",
+      "target": "utils_ensure_path_contains",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L5-L7",
+      "weight": 1.0,
+      "source": "readme_algoinstall",
+      "target": "readme_algokit"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "readme_algoinstall",
+      "target": "readme_docker"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "readme_algoinstall",
+      "target": "readme_git"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "readme_algoinstall",
+      "target": "readme_pipx"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "readme_algoinstall",
+      "target": "readme_python"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L193-L196",
+      "weight": 1.0,
+      "source": "readme_idempotent_command",
+      "target": "readme_algoinstall"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L96-L98",
+      "weight": 1.0,
+      "source": "readme_algokit",
+      "target": "readme_python"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L63-L64",
+      "weight": 1.0,
+      "source": "readme_installation_flow",
+      "target": "readme_algokit"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "readme_pipx",
+      "target": "readme_algokit"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "readme_checks_pipx_sh",
+      "target": "readme_pipx"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "README.md",
+      "source_location": "L96-L112",
+      "weight": 1.0,
+      "source": "readme_homebrew",
+      "target": "readme_pipx"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "readme_checks_python_sh",
+      "target": "readme_python"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "readme_checks_git_sh",
+      "target": "readme_git"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "readme_checks_docker_sh",
+      "target": "readme_docker"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L52-L189",
+      "weight": 1.0,
+      "source": "readme_dry_run",
+      "target": "readme_install_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_checks_docker_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_checks_git_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_checks_pipx_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_checks_python_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_os_linux_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_os_mac_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_os_windows_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L172-L173",
+      "weight": 1.0,
+      "source": "readme_install_sh",
+      "target": "readme_utils_sh"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": "L125-L140",
+      "weight": 1.0,
+      "source": "readme_landlock_fix",
+      "target": "readme_os_linux_sh"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L108-L112",
+      "weight": 1.0,
+      "source": "readme_os_mac_sh",
+      "target": "readme_homebrew"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "L84-L92",
+      "weight": 1.0,
+      "source": "readme_os_windows_sh",
+      "target": "readme_wsl"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "readme_installation_flow",
+      "target": "readme_platform_detection"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "prerequisite_checks_flow",
+      "label": "Prerequisite Dependency Checks",
+      "nodes": [
+        "readme_checks_python_sh",
+        "readme_checks_pipx_sh",
+        "readme_checks_docker_sh",
+        "readme_checks_git_sh"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+    },
+    {
+      "id": "os_module_dispatch",
+      "label": "OS-Specific Install Modules",
+      "nodes": [
+        "readme_os_linux_sh",
+        "readme_os_mac_sh",
+        "readme_os_windows_sh",
+        "readme_install_sh"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+    },
+    {
+      "id": "installation_flow_participants",
+      "label": "AlgoKit Installation Flow",
+      "nodes": [
+        "readme_platform_detection",
+        "readme_python",
+        "readme_pipx",
+        "readme_algokit"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/fusion/Code/GitRepos/algoinstall/README.md"
+    }
+  ],
+  "built_at_commit": "262746abcf5f2e65e3c06c3ac2c9d3257c771f62"
+}

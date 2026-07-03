@@ -1,0 +1,57 @@
+{
+  "/Users/fusion/Code/GitRepos/algoinstall/.claude/settings.local.json": {
+    "mtime": 1783064723.452858,
+    "ast_hash": "26f8005d2192826f2de6c35263aabbbd",
+    "semantic_hash": "26f8005d2192826f2de6c35263aabbbd"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/checks/docker.sh": {
+    "mtime": 1775998120.5624125,
+    "ast_hash": "0908ccef2dcdd2ee39206ba6e98a46a5",
+    "semantic_hash": "0908ccef2dcdd2ee39206ba6e98a46a5"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/checks/git.sh": {
+    "mtime": 1775998110.228983,
+    "ast_hash": "80e5a6d9f9ca5f381b27b9748afa805d",
+    "semantic_hash": "80e5a6d9f9ca5f381b27b9748afa805d"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/checks/pipx.sh": {
+    "mtime": 1778212879.5605717,
+    "ast_hash": "7c795b5ddc982c5bc6c96749072f7a0d",
+    "semantic_hash": "7c795b5ddc982c5bc6c96749072f7a0d"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/checks/python.sh": {
+    "mtime": 1778213430.3751411,
+    "ast_hash": "9b781e623e1378cd90c239be95eb870a",
+    "semantic_hash": "9b781e623e1378cd90c239be95eb870a"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/install.sh": {
+    "mtime": 1781774421.3375983,
+    "ast_hash": "c84e4fbd61d6902e49d5a5ab4be55905",
+    "semantic_hash": "c84e4fbd61d6902e49d5a5ab4be55905"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/os/linux.sh": {
+    "mtime": 1778213755.8245795,
+    "ast_hash": "485c1f9b28152f279774c7054e9bac42",
+    "semantic_hash": "485c1f9b28152f279774c7054e9bac42"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/os/mac.sh": {
+    "mtime": 1775998645.839057,
+    "ast_hash": "0d604f3d2e280fd4c6aa97b9f3caecd9",
+    "semantic_hash": "0d604f3d2e280fd4c6aa97b9f3caecd9"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/os/windows.sh": {
+    "mtime": 1778211676.3732114,
+    "ast_hash": "fcfbff0952ac3ccd79248080dada003a",
+    "semantic_hash": "fcfbff0952ac3ccd79248080dada003a"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/utils.sh": {
+    "mtime": 1781774513.5816224,
+    "ast_hash": "ca40d9987e5297c03741f9ce04fe1127",
+    "semantic_hash": "ca40d9987e5297c03741f9ce04fe1127"
+  },
+  "/Users/fusion/Code/GitRepos/algoinstall/README.md": {
+    "mtime": 1778518926.2602837,
+    "ast_hash": "91afc0c8029f9e4a481802f761579bcb",
+    "semantic_hash": "91afc0c8029f9e4a481802f761579bcb"
+  }
+}
